@@ -144,8 +144,18 @@ if (cartItemEl) {
   const decreaseBtn = document.getElementById('qty-decrease');
   const increaseBtn = document.getElementById('qty-increase');
   const removeBtn = document.getElementById('remove-item');
-  const checkoutBtn = document.getElementById('checkout-btn');
-  const checkoutNote = document.getElementById('checkout-note');
+  const preorderCta = document.getElementById('preorder-cta');
+  const preorderBtn = document.getElementById('preorder-btn');
+  const preorderForm = document.getElementById('preorder-form');
+  const preorderEmailInput = document.getElementById('preorder-email');
+  const preorderSuccess = document.getElementById('preorder-success');
+  const preorderEmailDisplay = document.getElementById('preorder-email-display');
+
+  function resetPreorderFlow() {
+    if (preorderCta) preorderCta.hidden = false;
+    if (preorderForm) preorderForm.hidden = true;
+    if (preorderSuccess) preorderSuccess.hidden = true;
+  }
 
   function formatPrice(n) {
     return `$${n.toFixed(2)}`;
@@ -188,11 +198,27 @@ if (cartItemEl) {
   removeBtn.addEventListener('click', () => {
     setCartQty(0);
     renderCart();
-    if (checkoutNote) checkoutNote.hidden = true;
+    resetPreorderFlow();
   });
-  if (checkoutBtn && checkoutNote) {
-    checkoutBtn.addEventListener('click', () => {
-      checkoutNote.hidden = false;
+
+  if (preorderBtn && preorderForm) {
+    preorderBtn.addEventListener('click', () => {
+      preorderCta.hidden = true;
+      preorderForm.hidden = false;
+      preorderEmailInput.focus();
+    });
+  }
+
+  if (preorderForm) {
+    preorderForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!preorderEmailInput.checkValidity()) {
+        preorderEmailInput.reportValidity();
+        return;
+      }
+      preorderEmailDisplay.textContent = preorderEmailInput.value;
+      preorderForm.hidden = true;
+      preorderSuccess.hidden = false;
     });
   }
 }

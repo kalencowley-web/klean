@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Cart — Klean Hair</title>
-<meta name="description" content="Review your Klean Hair dry shampoo order.">
+<title>Your Preorder — Klean Hair</title>
+<meta name="description" content="Reserve your Klean Hair dry shampoo before it officially launches.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=5">
+<link rel="stylesheet" href="styles.css?v=6">
 <noscript><style>[data-reveal] { opacity: 1 !important; transform: none !important; }</style></noscript>
 </head>
 <body>
@@ -51,7 +51,7 @@
     </nav>
 
     <div class="nav-actions">
-      <a href="cart.html" class="cart-link" aria-label="View cart">
+      <a href="cart.html" class="cart-link" aria-label="View preorder">
         <svg class="icon" viewBox="0 0 24 24"><path d="M6 6h15l-1.5 9h-12.5z"/><path d="M6 6 5 3H2"/><circle cx="9.5" cy="20" r="1.4"/><circle cx="17.5" cy="20" r="1.4"/></svg>
         <span class="cart-badge" id="cart-badge" hidden>0</span>
       </a>
@@ -68,8 +68,9 @@
   <section class="cart-page">
     <div class="container">
       <div class="section-head" data-reveal>
-        <p class="eyebrow">Your Bag</p>
-        <h1>Your Cart</h1>
+        <p class="eyebrow">Reserve Yours</p>
+        <h1>Your Preorder</h1>
+        <p class="section-sub">Klean hasn't officially launched yet — preorder now and we'll email you the moment it's ready to ship. No payment required today.</p>
       </div>
 
       <div class="cart-panel" data-reveal>
@@ -90,29 +91,42 @@
         </div>
 
         <div id="cart-empty" class="cart-empty" hidden>
-          <p>Your cart is empty.</p>
+          <p>Your preorder is empty.</p>
           <a href="index.html#shop" class="btn btn-primary btn-lg">Shop Klean</a>
         </div>
 
         <div id="cart-summary" class="cart-summary">
           <div class="cart-summary-row">
-            <span>Subtotal</span>
+            <span>Estimated subtotal</span>
             <span id="cart-subtotal">$14.99</span>
           </div>
           <div class="cart-summary-row">
             <span>Shipping</span>
-            <span>Calculated at checkout</span>
+            <span>Calculated at launch</span>
           </div>
           <div class="cart-summary-row">
             <span>Donation to Utah charities</span>
             <span>Included</span>
           </div>
           <div class="cart-summary-row cart-summary-total">
-            <span>Total</span>
+            <span>Estimated total</span>
             <span id="cart-total">$14.99</span>
           </div>
-          <button class="btn btn-primary btn-lg cart-checkout" id="checkout-btn">Checkout</button>
-          <p id="checkout-note" class="form-note" hidden>This is a demo storefront — checkout isn't connected to real payment yet. Thanks for trying it out!</p>
+
+          <div id="preorder-cta">
+            <button class="btn btn-primary btn-lg cart-checkout" id="preorder-btn">Preorder Now</button>
+            <p class="form-note">You won't be charged today — we'll reach out before anything ships.</p>
+          </div>
+
+          <form id="preorder-form" class="cta-form cart-preorder-form" hidden>
+            <label class="sr-only" for="preorder-email">Email address</label>
+            <input id="preorder-email" type="email" placeholder="you@example.com" required>
+            <button type="submit" class="btn btn-primary btn-lg">Confirm Preorder</button>
+          </form>
+
+          <div id="preorder-success" class="preorder-success" hidden>
+            <p>🌿 You're on the list! We'll email <strong id="preorder-email-display"></strong> the moment Klean is ready to ship.</p>
+          </div>
         </div>
 
       </div>
@@ -158,6 +172,6 @@
   <svg class="icon" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
 
-<script src="script.js?v=5"></script>
+<script src="script.js?v=6"></script>
 </body>
 </html>
