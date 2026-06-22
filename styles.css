@@ -9,6 +9,7 @@
   --color-primary-stripe: #F2A8C2;
 
   --color-accent: #3FB8D6;
+  --color-accent-light: #7DD4E8;
   --color-accent-tint: #E4F6FA;
 
   --color-bg: #FFFFFF;
@@ -301,10 +302,10 @@ em {
 }
 
 .logo-pop {
-  color: var(--color-primary);
+  color: var(--color-primary-stripe);
   font-weight: 700;
   font-style: italic;
-  text-shadow: 2px 2px 0 var(--color-accent);
+  text-shadow: 2px 2px 0 var(--color-accent-light);
   transition: transform var(--t-fast) var(--ease);
   display: inline-block;
 }
