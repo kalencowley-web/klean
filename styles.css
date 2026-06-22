@@ -344,12 +344,12 @@ em {
   .hf-2, .hf-4, .hf-5 { display: none; }
   .hf-1 { top: 4px; left: 4px; right: auto; width: 16px; }
   .hf-3 { display: block; top: 22px; left: 58%; width: 18px; }
-  .hf-6 { top: 4px; right: 2px; left: auto; width: 12px; }
+  .hf-6 { top: 10px; right: 2px; left: auto; width: 12px; }
   .hf-7 {
     display: block;
-    top: 58px;
+    top: 42px;
     left: 85px;
-    width: 20px;
+    width: 13px;
     opacity: 0.45;
   }
 }
