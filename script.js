@@ -148,8 +148,13 @@ if (cartItemEl) {
   const preorderBtn = document.getElementById('preorder-btn');
   const preorderForm = document.getElementById('preorder-form');
   const preorderEmailInput = document.getElementById('preorder-email');
+  const preorderQtyField = document.getElementById('preorder-qty-field');
+  const preorderTotalField = document.getElementById('preorder-total-field');
+  const preorderSubmitBtn = document.getElementById('preorder-submit-btn');
+  const preorderError = document.getElementById('preorder-error');
   const preorderSuccess = document.getElementById('preorder-success');
   const preorderEmailDisplay = document.getElementById('preorder-email-display');
+  const PREORDER_ENDPOINT = 'https://formsubmit.co/mykleanhair@gmail.com';
 
   function resetPreorderFlow() {
     if (preorderCta) preorderCta.hidden = false;
@@ -176,6 +181,8 @@ if (cartItemEl) {
       subtotalEl.textContent = formatPrice(lineTotal);
       totalEl.textContent = formatPrice(lineTotal);
       decreaseBtn.disabled = qty <= 1;
+      if (preorderQtyField) preorderQtyField.value = String(qty);
+      if (preorderTotalField) preorderTotalField.value = formatPrice(lineTotal);
     }
   }
 
@@ -210,15 +217,34 @@ if (cartItemEl) {
   }
 
   if (preorderForm) {
-    preorderForm.addEventListener('submit', (e) => {
+    preorderForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      if (!preorderEmailInput.checkValidity()) {
-        preorderEmailInput.reportValidity();
+      if (!preorderForm.checkValidity()) {
+        preorderForm.reportValidity();
         return;
       }
-      preorderEmailDisplay.textContent = preorderEmailInput.value;
-      preorderForm.hidden = true;
-      preorderSuccess.hidden = false;
+
+      if (preorderError) preorderError.hidden = true;
+      preorderSubmitBtn.disabled = true;
+      preorderSubmitBtn.textContent = 'Sending…';
+
+      try {
+        const response = await fetch(PREORDER_ENDPOINT, {
+          method: 'POST',
+          headers: { Accept: 'application/json' },
+          body: new FormData(preorderForm),
+        });
+        if (!response.ok) throw new Error('Request failed');
+
+        preorderEmailDisplay.textContent = preorderEmailInput.value;
+        preorderForm.hidden = true;
+        preorderSuccess.hidden = false;
+      } catch (err) {
+        if (preorderError) preorderError.hidden = false;
+      } finally {
+        preorderSubmitBtn.disabled = false;
+        preorderSubmitBtn.textContent = 'Confirm Preorder';
+      }
     });
   }
 }

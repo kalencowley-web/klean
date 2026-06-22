@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=7">
+<link rel="stylesheet" href="styles.css?v=8">
 <noscript><style>[data-reveal] { opacity: 1 !important; transform: none !important; }</style></noscript>
 </head>
 <body>
@@ -118,10 +118,45 @@
             <p class="form-note">You won't be charged today — we'll reach out before anything ships.</p>
           </div>
 
-          <form id="preorder-form" class="cta-form cart-preorder-form" hidden>
-            <label class="sr-only" for="preorder-email">Email address</label>
-            <input id="preorder-email" type="email" placeholder="you@example.com" required>
-            <button type="submit" class="btn btn-primary btn-lg">Confirm Preorder</button>
+          <form id="preorder-form" class="preorder-form" hidden>
+            <input type="hidden" name="_subject" value="New Klean Hair preorder">
+            <input type="hidden" name="product" value="Klean Dry Shampoo">
+            <input type="hidden" id="preorder-qty-field" name="quantity" value="1">
+            <input type="hidden" id="preorder-total-field" name="estimated_total" value="$14.99">
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="preorder-name">Full name</label>
+                <input id="preorder-name" name="name" type="text" placeholder="Jane Doe" required>
+              </div>
+              <div class="form-field">
+                <label for="preorder-email">Email</label>
+                <input id="preorder-email" name="email" type="email" placeholder="you@example.com" required>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="preorder-address">Shipping address</label>
+              <input id="preorder-address" name="address" type="text" placeholder="123 Main St" required>
+            </div>
+
+            <div class="form-row form-row-3">
+              <div class="form-field">
+                <label for="preorder-city">City</label>
+                <input id="preorder-city" name="city" type="text" placeholder="Salt Lake City" required>
+              </div>
+              <div class="form-field">
+                <label for="preorder-state">State</label>
+                <input id="preorder-state" name="state" type="text" placeholder="UT" required>
+              </div>
+              <div class="form-field">
+                <label for="preorder-zip">ZIP</label>
+                <input id="preorder-zip" name="zip" type="text" placeholder="84101" required>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" id="preorder-submit-btn">Confirm Preorder</button>
+            <p id="preorder-error" class="form-note" hidden>Something went wrong sending your preorder — please try again.</p>
           </form>
 
           <div id="preorder-success" class="preorder-success" hidden>
@@ -172,6 +207,6 @@
   <svg class="icon" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
 
-<script src="script.js?v=7"></script>
+<script src="script.js?v=8"></script>
 </body>
 </html>
