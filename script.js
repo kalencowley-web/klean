@@ -56,3 +56,41 @@ if (prefersReducedMotion) {
 } else {
   revealEls.forEach((el) => el.classList.add('in-view'));
 }
+
+// Scroll-driven chrome: shrinking nav, back-to-top, hero parallax
+const siteHeader = document.querySelector('.site-header');
+const backToTop = document.getElementById('back-to-top');
+const heroStripePanel = document.getElementById('hero-stripe-panel');
+
+let lastScrollY = -1;
+let scrollTicking = false;
+
+function updateOnScroll() {
+  const y = window.scrollY;
+
+  if (siteHeader) siteHeader.classList.toggle('scrolled', y > 8);
+  if (backToTop) backToTop.classList.toggle('visible', y > 700);
+
+  if (heroStripePanel && !prefersReducedMotion) {
+    heroStripePanel.style.transform = `translateY(${Math.min(y * 0.12, 60)}px)`;
+  }
+
+  scrollTicking = false;
+}
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY === lastScrollY) return;
+  lastScrollY = window.scrollY;
+  if (!scrollTicking) {
+    requestAnimationFrame(updateOnScroll);
+    scrollTicking = true;
+  }
+}, { passive: true });
+
+updateOnScroll();
+
+if (backToTop) {
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+  });
+}
