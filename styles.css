@@ -897,7 +897,7 @@ figcaption small {
   padding: 14px 20px;
   border-radius: var(--radius-full);
   border: none;
-  background: var(--color-accent-tint);
+  background: #C8ECF8;
   color: var(--color-text);
   font-size: 0.95rem;
   font-family: inherit;
