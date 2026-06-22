@@ -3,8 +3,8 @@
    ============================================ */
 :root {
   /* Color: 1 primary, 1 accent, neutrals */
-  --color-primary: #D6336C;
-  --color-primary-dark: #B3265A;
+  --color-primary: #1268A6;
+  --color-primary-dark: #0D4F7D;
   --color-primary-tint: #FBE7EE;
   --color-primary-stripe: #F2A8C2;
 
@@ -836,9 +836,12 @@ figcaption small {
   padding: 14px 20px;
   border-radius: var(--radius-full);
   border: none;
+  background: var(--color-accent-tint);
+  color: var(--color-text);
   font-size: 0.95rem;
   font-family: inherit;
 }
+.cta-form input::placeholder { color: var(--color-text-faint); }
 .cta-form input:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 
 .final-cta .btn-primary {
