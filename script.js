@@ -41,13 +41,12 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 if (prefersReducedMotion) {
   revealEls.forEach((el) => el.classList.add('in-view'));
 } else if ('IntersectionObserver' in window) {
+  // Toggle (not unobserve) so the reveal replays every time an element
+  // crosses into or out of view, whether scrolling down or back up.
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          observer.unobserve(entry.target);
-        }
+        entry.target.classList.toggle('in-view', entry.isIntersecting);
       });
     },
     { threshold: 0.15 }
