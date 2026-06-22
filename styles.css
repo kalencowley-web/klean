@@ -472,35 +472,6 @@ em {
   color: var(--color-text-muted);
 }
 
-.stats {
-  background: var(--color-bg-subtle);
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
-  padding: var(--space-8) 0;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-6);
-  text-align: center;
-}
-
-.stat-number {
-  display: block;
-  font-family: var(--font-display);
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
-  font-weight: 600;
-  color: var(--color-primary);
-}
-
-.stat-label {
-  display: block;
-  margin-top: var(--space-1);
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
-}
-
 /* ============================================
    SECTIONS - shared rhythm
    ============================================ */
@@ -884,7 +855,6 @@ figcaption small {
   .nav-actions .btn-sm { display: none; }
   .nav-toggle { display: flex; }
 
-  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-8) var(--space-5); }
   .certs-grid { gap: var(--space-6) var(--space-5); }
   .cert-badge { width: 88px; }
   .cert-icon { width: 48px; height: 48px; }
