@@ -300,6 +300,16 @@ em {
   text-decoration: none;
 }
 
+.logo-pop {
+  color: var(--color-primary);
+  font-weight: 700;
+  font-style: italic;
+  text-shadow: 2px 2px 0 var(--color-accent);
+  transition: transform var(--t-fast) var(--ease);
+  display: inline-block;
+}
+.logo-pop:hover { transform: translateY(-1px) rotate(-1deg); }
+
 .nav-links {
   display: flex;
   gap: var(--space-6);
@@ -644,14 +654,35 @@ section { padding: var(--space-12) 0; }
 /* ============================================
    TESTIMONIALS
    ============================================ */
-.testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-5);
+.testimonials-hint {
+  display: none;
 }
+
+.testimonial-scroll {
+  display: flex;
+  gap: var(--space-5);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: var(--space-5);
+  padding-bottom: var(--space-3);
+  margin: 0 calc(var(--space-5) * -1);
+  padding-left: var(--space-5);
+  padding-right: var(--space-5);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary-stripe) transparent;
+}
+.testimonial-scroll::-webkit-scrollbar { height: 6px; }
+.testimonial-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-primary-stripe);
+  border-radius: var(--radius-full);
+}
+.testimonial-scroll::-webkit-scrollbar-track { background: transparent; }
 
 .testimonial-card {
   margin: 0;
+  flex: 0 0 320px;
+  scroll-snap-align: start;
   background: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
@@ -888,7 +919,7 @@ figcaption small {
   .shop-visual { order: -1; }
   .card-grid { grid-template-columns: repeat(2, 1fr); }
   .process-grid { grid-template-columns: 1fr; gap: var(--space-10); }
-  .testimonial-grid { grid-template-columns: 1fr; }
+  .testimonials-hint { display: block; }
   .footer-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -920,6 +951,7 @@ figcaption small {
   .cert-icon svg { width: 22px; height: 22px; }
   .cert-badge span { font-size: 0.74rem; }
   .card-grid { grid-template-columns: 1fr; }
+  .testimonial-card { flex-basis: 84%; }
   .footer-grid { grid-template-columns: 1fr; gap: var(--space-8); }
   .footer-bottom { flex-direction: column; gap: var(--space-4); text-align: center; }
   .hero-cta { flex-direction: column; align-items: stretch; }
