@@ -2,16 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Klean Dry Shampoo — Bottle Label (5.6cm x 9.7cm)</title>
+<title>Klean Dry Shampoo — Bottle Label (9.7cm x 5.6cm)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html, body {
-    width: 56mm;
-    height: 97mm;
-  }
+  html, body { width: 97mm; height: 56mm; }
   body {
     font-family: 'Inter', sans-serif;
     color: #18141A;
@@ -19,166 +16,161 @@
   }
 
   .label {
-    width: 56mm;
-    height: 97mm;
+    width: 97mm;
+    height: 56mm;
     position: relative;
     background: #FFFFFF;
     display: flex;
-    flex-direction: column;
     overflow: hidden;
+    border-top: 1.4mm solid;
+    border-bottom: 1.4mm solid;
+    border-image: repeating-linear-gradient(90deg, #F2A8C2 0 2mm, #3FB8D6 2mm 4mm) 1;
   }
 
-  /* Brand band */
-  .brand-band {
+  /* ===== LEFT BRAND PANEL ===== */
+  .brand-panel {
+    width: 38mm;
+    height: 100%;
     background: #F2A8C2;
-    padding: 2.6mm 2mm 2.2mm;
-    text-align: center;
+    position: relative;
     flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2.4mm 2.2mm;
+    overflow: hidden;
   }
-  .brand-flowers { display: flex; justify-content: center; gap: 1.2mm; margin-bottom: 0.4mm; }
-  .brand-flowers svg { width: 3mm; height: 3mm; }
+  .bg-flower {
+    position: absolute;
+    color: #ffffff;
+    opacity: 0.16;
+  }
+  .bg-flower svg { width: 100%; height: 100%; display: block; }
+  .bg-flower.f1 { width: 14mm; top: -4mm; left: -4mm; }
+  .bg-flower.f2 { width: 10mm; bottom: -3mm; right: -3mm; }
+  .bg-flower.f3 { width: 7mm; bottom: 8mm; left: -2mm; }
+
+  .brand-flower-icon { width: 3.4mm; height: 3.4mm; margin-top: 0.4mm; }
   .wordmark {
     font-family: 'Fraunces', serif;
     font-style: italic;
     font-weight: 600;
     color: #FFFFFF;
-    font-size: 6.4mm;
+    font-size: 5mm;
     line-height: 1;
+    margin-top: 0.6mm;
+    position: relative;
+    z-index: 1;
   }
   .brand-sub {
-    font-size: 1.7mm;
-    letter-spacing: 0.3mm;
+    font-size: 1.35mm;
+    letter-spacing: 0.2mm;
     text-transform: uppercase;
     color: #FFFFFF;
-    margin-top: 0.6mm;
-    font-weight: 600;
+    margin-top: 0.5mm;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
   }
-
-  /* Statement of identity */
-  .identity {
-    text-align: center;
-    padding: 2mm 2mm 0;
-    flex-shrink: 0;
-  }
-  .identity h1 {
+  .identity-left {
     font-family: 'Fraunces', serif;
     font-weight: 600;
-    font-size: 3.6mm;
+    font-size: 2.7mm;
     line-height: 1.15;
-  }
-  .identity p {
-    font-size: 1.7mm;
-    color: #65606B;
-    margin-top: 0.8mm;
-    letter-spacing: 0.15mm;
-  }
-
-  .divider {
-    height: 0.25mm;
-    background: #ECE6E9;
-    margin: 1.8mm 3mm;
-    flex-shrink: 0;
-  }
-  .divider-accent {
-    height: 0.4mm;
-    background: linear-gradient(90deg, #2480BA, #3FB8D6);
-    margin: 1.6mm 3mm;
-    flex-shrink: 0;
-    border-radius: 1mm;
-  }
-
-  /* Marketing blurb */
-  .blurb {
-    text-align: center;
-    padding: 0 3mm;
-    flex-shrink: 0;
-  }
-  .blurb p {
-    font-style: italic;
-    font-size: 1.7mm;
-    line-height: 1.35;
     color: #18141A;
+    margin-top: 2mm;
+    position: relative;
+    z-index: 1;
+  }
+  .tagline-left {
+    font-size: 1.3mm;
+    line-height: 1.4;
+    color: #4A3340;
+    margin-top: 1mm;
+    position: relative;
+    z-index: 1;
+  }
+  .netqty-left {
+    margin-top: auto;
+    font-size: 1.9mm;
+    font-weight: 800;
+    letter-spacing: 0.1mm;
+    color: #FFFFFF;
+    position: relative;
+    z-index: 1;
   }
 
-  .badge {
-    margin: 1.6mm auto 0;
-    width: fit-content;
-    background: #E4F6FA;
-    color: #1C6796;
-    font-size: 1.5mm;
-    font-weight: 700;
-    padding: 0.6mm 2.4mm;
-    border-radius: 3mm;
-    text-align: center;
+  /* ===== RIGHT INFO PANEL ===== */
+  .info-panel {
+    width: 59mm;
+    height: 100%;
+    padding: 2.2mm 2.6mm;
+    display: flex;
+    flex-direction: column;
   }
 
-  /* Trust icon row */
   .trust-row {
     display: flex;
-    justify-content: center;
-    gap: 4mm;
-    margin-top: 1mm;
+    justify-content: space-between;
     flex-shrink: 0;
   }
-  .trust-item { text-align: center; width: 11mm; }
+  .trust-item { text-align: center; width: 8.6mm; }
   .trust-icon {
-    width: 6mm;
-    height: 6mm;
+    width: 5mm;
+    height: 5mm;
     border-radius: 50%;
     background: #E4F6FA;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 0.6mm;
+    margin: 0 auto 0.4mm;
   }
-  .trust-icon svg { width: 3.2mm; height: 3.2mm; color: #2480BA; }
+  .trust-icon svg { width: 2.7mm; height: 2.7mm; color: #2480BA; }
   .trust-item span {
-    font-size: 1.25mm;
+    font-size: 1.02mm;
     font-weight: 700;
     color: #65606B;
-    letter-spacing: 0.05mm;
-    line-height: 1.2;
+    letter-spacing: 0.02mm;
+    line-height: 1.15;
     display: block;
   }
 
-  /* Net quantity */
-  .net-qty {
-    text-align: center;
-    font-size: 2.1mm;
-    font-weight: 700;
-    letter-spacing: 0.2mm;
-    margin-top: 2mm;
+  .info-divider {
+    height: 0.25mm;
+    background: #ECE6E9;
+    margin: 1.6mm 0;
     flex-shrink: 0;
   }
 
-  /* Lower legal block */
-  .legal {
-    margin-top: 2.8mm;
-    padding: 0 2.8mm 2.4mm;
-    flex-shrink: 0;
+  .info-columns {
+    display: flex;
+    gap: 2.6mm;
+    flex: 1;
+    min-height: 0;
   }
-  .legal-block { margin-bottom: 1.3mm; }
-  .legal h2 {
-    font-size: 1.6mm;
+  .info-col { width: 50%; }
+
+  .legal-block { margin-bottom: 1.5mm; }
+  .legal-block h2 {
+    font-size: 1.4mm;
     font-weight: 800;
-    letter-spacing: 0.2mm;
+    letter-spacing: 0.15mm;
     text-transform: uppercase;
     color: #18141A;
-    margin-bottom: 0.4mm;
+    margin-bottom: 0.3mm;
   }
-  .legal p {
-    font-size: 1.55mm;
-    line-height: 1.4;
+  .legal-block p {
+    font-size: 1.32mm;
+    line-height: 1.32;
     color: #2A262E;
   }
-  .legal .placeholder {
+  .legal-block .placeholder {
     color: #B33A5E;
     font-weight: 700;
     font-style: italic;
   }
-  .warning {
-    font-size: 1.45mm;
-    line-height: 1.35;
+  .legal-block .warning-text {
     color: #65606B;
   }
 </style>
@@ -187,73 +179,79 @@
 
   <div class="label">
 
-    <div class="brand-band">
-      <div class="brand-flowers">
-        <svg viewBox="0 0 40 40" fill="#fff"><g><ellipse cx="20" cy="9" rx="6.5" ry="10" opacity="0.95"/><ellipse cx="20" cy="9" rx="6.5" ry="10" opacity="0.95" transform="rotate(60 20 20)"/><ellipse cx="20" cy="9" rx="6.5" ry="10" opacity="0.85" transform="rotate(120 20 20)"/><ellipse cx="20" cy="9" rx="6.5" ry="10" opacity="0.95" transform="rotate(180 20 20)"/><ellipse cx="20" cy="9" rx="6.5" ry="10" opacity="0.85" transform="rotate(240 20 20)"/><ellipse cx="20" cy="9" rx="6.5" ry="10" opacity="0.95" transform="rotate(300 20 20)"/></g><circle cx="20" cy="20" r="5" fill="#F2A8C2"/></svg>
-      </div>
+    <div class="brand-panel">
+      <div class="bg-flower f1"><svg viewBox="0 0 40 40" fill="currentColor"><g><ellipse cx="20" cy="9" rx="6.5" ry="10"/><ellipse cx="20" cy="9" rx="6.5" ry="10" transform="rotate(60 20 20)"/><ellipse cx="20" cy="9" rx="6.5" ry="10" transform="rotate(120 20 20)"/><ellipse cx="20" cy="9" rx="6.5" ry="10" transform="rotate(180 20 20)"/><ellipse cx="20" cy="9" rx="6.5" ry="10" transform="rotate(240 20 20)"/><ellipse cx="20" cy="9" rx="6.5" ry="10" transform="rotate(300 20 20)"/></g></svg></div>
+      <div class="bg-flower f2"><svg viewBox="0 0 40 40" fill="currentColor"><g><ellipse cx="20" cy="9" rx="6.5" ry="10"/><ellipse cx="20" cy="9" rx="6.5" ry="10" transform="rotate(60 20 20)"/><ellipse cx="20" cy="9" rx="6.5" ry="10" transform="rotate(120 20 20)"/><ellipse cx="20" cy="9" rx="6.5" ry="10" transform="rotate(180 20 20)"/><ellipse cx="20" cy="9" rx="6.5" ry="10" transform="rotate(240 20 20)"/><ellipse cx="20" cy="9" rx="6.5" ry="10" transform="rotate(300 20 20)"/></g></svg></div>
+      <div class="bg-flower f3"><svg viewBox="0 0 40 40" fill="currentColor"><g><ellipse cx="20" cy="9" rx="6.5" ry="10"/><ellipse cx="20" cy="9" rx="6.5" ry="10" transform="rotate(60 20 20)"/><ellipse cx="20" cy="9" rx="6.5" ry="10" transform="rotate(120 20 20)"/><ellipse cx="20" cy="9" rx="6.5" ry="10" transform="rotate(180 20 20)"/><ellipse cx="20" cy="9" rx="6.5" ry="10" transform="rotate(240 20 20)"/><ellipse cx="20" cy="9" rx="6.5" ry="10" transform="rotate(300 20 20)"/></g></svg></div>
+
+      <div class="brand-flower-icon"><svg viewBox="0 0 40 40" fill="#fff"><g><ellipse cx="20" cy="9" rx="6.5" ry="10" opacity="0.95"/><ellipse cx="20" cy="9" rx="6.5" ry="10" opacity="0.95" transform="rotate(60 20 20)"/><ellipse cx="20" cy="9" rx="6.5" ry="10" opacity="0.85" transform="rotate(120 20 20)"/><ellipse cx="20" cy="9" rx="6.5" ry="10" opacity="0.95" transform="rotate(180 20 20)"/><ellipse cx="20" cy="9" rx="6.5" ry="10" opacity="0.85" transform="rotate(240 20 20)"/><ellipse cx="20" cy="9" rx="6.5" ry="10" opacity="0.95" transform="rotate(300 20 20)"/></g><circle cx="20" cy="20" r="5" fill="#F2A8C2"/></svg></div>
       <div class="wordmark">Klean Hair</div>
       <div class="brand-sub">Women-Owned &middot; Utah Made</div>
+
+      <div class="identity-left">Dry Shampoo Powder</div>
+      <div class="tagline-left">All-Natural &middot; Non-Toxic<br>Cruelty-Free</div>
+
+      <div class="netqty-left">NET WT 20 mL &middot; 0.68 FL OZ</div>
     </div>
 
-    <div class="identity">
-      <h1>Dry Shampoo Powder</h1>
-      <p>All-Natural &middot; Non-Toxic &middot; Cruelty-Free</p>
-    </div>
+    <div class="info-panel">
 
-    <div class="divider-accent"></div>
-
-    <div class="blurb">
-      <p>Refresh roots in under a minute. Every bottle gives back to the charities protecting Utah's Great Salt Lake.</p>
-      <div class="badge">1 BOTTLE = 1 DONATION</div>
-    </div>
-
-    <div class="trust-row">
-      <div class="trust-item">
-        <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21c-1-4 1-13 11-15 4-1 6 1 6 1s-1 7-6 10c-3 2-7 2-9 1z"/><path d="M5 21c2-5 6-9 11-11"/></svg></div>
-        <span>NATURAL</span>
-      </div>
-      <div class="trust-item">
-        <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-9.5-9C.8 8.3 2.6 4 7 4c2.2 0 3.9 1.3 5 3 1.1-1.7 2.8-3 5-3 4.4 0 6.2 4.3 4.5 8-2.5 4.6-9.5 9-9.5 9z"/></svg></div>
-        <span>CRUELTY-<br>FREE</span>
-      </div>
-      <div class="trust-item">
-        <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 8.5 8 9 4.5-.5 8-4 8-9V6z"/><path d="M9 12l2 2 4-4.5"/></svg></div>
-        <span>NON-<br>TOXIC</span>
-      </div>
-      <div class="trust-item">
-        <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="M12 14v7M9 18h6"/></svg></div>
-        <span>WOMEN-<br>OWNED</span>
-      </div>
-    </div>
-
-    <div class="net-qty">NET WT 20 mL &middot; 0.68 FL OZ</div>
-
-    <div class="legal">
-      <div class="divider"></div>
-
-      <div class="legal-block">
-        <h2>Directions</h2>
-        <p>Mist evenly through roots and oily areas, holding bottle 6 in. from hair. Wait 60 seconds, massage into scalp, then brush through.</p>
+      <div class="trust-row">
+        <div class="trust-item">
+          <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 9c-1.2-1.6-1.6-4-.7-5.3C8.4 2.4 9.6 3 10.4 4.3 11 5.3 11 7 10.5 8.2"/><path d="M16 9c1.2-1.6 1.6-4 .7-5.3C15.6 2.4 14.4 3 13.6 4.3 13 5.3 13 7 13.5 8.2"/><path d="M5 13a7 7 0 0 1 14 0c0 4-2 8-7 9-5-1-7-5-7-9z"/></svg></div>
+          <span>NO ANIMAL<br>TESTING</span>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="M12 14v7M9 18h6"/></svg></div>
+          <span>WOMEN<br>OWNED</span>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 14 8l5.5.5-4.2 3.7L16.5 18 12 14.8 7.5 18l1.2-5.8L4.5 8.5 10 8z"/></svg></div>
+          <span>MADE IN<br>USA</span>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21c-1-4 1-13 11-15 4-1 6 1 6 1s-1 7-6 10c-3 2-7 2-9 1z"/><path d="M5 21c2-5 6-9 11-11"/></svg></div>
+          <span>CERTIFIED<br>ORGANIC</span>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V10"/><path d="M12 10C12 5 8 3 4 3c0 5 2 8 8 7z"/><path d="M12 13c0-4.5 3.5-6.5 8-6.5 0 4.5-2 7.5-8 6.5z"/></svg></div>
+          <span>100%<br>VEGAN</span>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 8.5 8 9 4.5-.5 8-4 8-9V6z"/><path d="M9 12l2 2 4-4.5"/></svg></div>
+          <span>TOXIN<br>FREE</span>
+        </div>
       </div>
 
-      <div class="legal-block">
-        <h2>Ingredients</h2>
-        <p>Oryza Sativa (Rice) Starch, Maranta Arundinacea (Arrowroot) Root Powder, Manihot Esculenta (Tapioca) Starch, Kaolin, Maris Sal (Great Salt Lake Mineral Salt), Lavandula Angustifolia (Lavender) Oil.</p>
+      <div class="info-divider"></div>
+
+      <div class="info-columns">
+        <div class="info-col">
+          <div class="legal-block">
+            <h2>Directions</h2>
+            <p>Mist evenly through roots and oily areas, 6 in. from hair. Wait 60 sec, massage into scalp, then brush through.</p>
+          </div>
+          <div class="legal-block">
+            <h2>Warnings</h2>
+            <p class="warning-text">For external use on hair and scalp only. Avoid contact with eyes. Discontinue use if irritation occurs. Keep out of reach of children.</p>
+          </div>
+        </div>
+        <div class="info-col">
+          <div class="legal-block">
+            <h2>Ingredients</h2>
+            <p>Oryza Sativa (Rice) Starch, Maranta Arundinacea (Arrowroot) Root Powder, Manihot Esculenta (Tapioca) Starch, Kaolin, Maris Sal (Great Salt Lake Mineral Salt), Lavandula Angustifolia (Lavender) Oil.</p>
+          </div>
+          <div class="legal-block">
+            <h2>Distributed By</h2>
+            <p><span class="placeholder">[legal address needed]</span></p>
+          </div>
+          <div class="legal-block" style="margin-bottom:0;">
+            <h2>Questions / Reactions</h2>
+            <p><span class="placeholder">[contact needed]</span> &middot; kleanhair.com</p>
+          </div>
+        </div>
       </div>
 
-      <div class="legal-block">
-        <p class="warning">For external use on hair and scalp only. Avoid contact with eyes. Discontinue use if irritation occurs. Keep out of reach of children.</p>
-      </div>
-
-      <div class="legal-block">
-        <h2>Distributed By</h2>
-        <p><span class="placeholder">[Klean Hair Co. — legal address needed]</span></p>
-      </div>
-
-      <div class="legal-block" style="margin-bottom:0;">
-        <h2>Questions / Report a Reaction</h2>
-        <p><span class="placeholder">[support email or phone needed]</span> &middot; kleanhair.com</p>
-      </div>
     </div>
 
   </div>
