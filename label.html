@@ -107,40 +107,39 @@
     height: 100%;
     padding: 2.2mm 2.6mm;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 2.2mm;
   }
 
+  /* Vertical badge strip, flush against the pink/white seam */
   .trust-row {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     flex-shrink: 0;
+    width: 9.2mm;
+    border-right: 0.25mm solid #ECE6E9;
+    padding-right: 2mm;
   }
-  .trust-item { text-align: center; width: 8.6mm; }
+  .trust-item { text-align: center; }
   .trust-icon {
-    width: 5mm;
-    height: 5mm;
+    width: 4.6mm;
+    height: 4.6mm;
     border-radius: 50%;
     background: #E4F6FA;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 0.4mm;
+    margin: 0 auto 0.35mm;
   }
-  .trust-icon svg { width: 2.7mm; height: 2.7mm; color: #2480BA; }
+  .trust-icon svg { width: 2.5mm; height: 2.5mm; color: #2480BA; }
   .trust-item span {
-    font-size: 1.02mm;
+    font-size: 0.92mm;
     font-weight: 700;
     color: #65606B;
-    letter-spacing: 0.02mm;
-    line-height: 1.15;
+    letter-spacing: 0.01mm;
+    line-height: 1.1;
     display: block;
-  }
-
-  .info-divider {
-    height: 0.25mm;
-    background: #ECE6E9;
-    margin: 1.6mm 0;
-    flex-shrink: 0;
   }
 
   .info-columns {
@@ -222,8 +221,6 @@
           <span>TOXIN<br>FREE</span>
         </div>
       </div>
-
-      <div class="info-divider"></div>
 
       <div class="info-columns">
         <div class="info-col">
