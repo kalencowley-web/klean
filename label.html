@@ -104,10 +104,45 @@
   .info-panel {
     width: 59mm;
     height: 100%;
-    padding: 2.2mm 2.6mm;
+    padding: 1.6mm 2.6mm;
+    display: flex;
+    flex-direction: column;
+  }
+  .info-top {
     display: flex;
     flex-direction: row;
     gap: 2.2mm;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .barcode-placeholder {
+    flex-shrink: 0;
+    margin-top: 0.5mm;
+    padding-left: 11.4mm;
+    text-align: left;
+  }
+  .barcode-bars {
+    width: 26mm;
+    height: 4mm;
+    background: repeating-linear-gradient(
+      90deg,
+      #18141A 0, #18141A 0.3mm,
+      transparent 0.3mm, transparent 0.55mm,
+      #18141A 0.55mm, #18141A 0.7mm,
+      transparent 0.7mm, transparent 1.3mm,
+      #18141A 1.3mm, #18141A 1.42mm,
+      transparent 1.42mm, transparent 1.8mm,
+      #18141A 1.8mm, #18141A 2.15mm,
+      transparent 2.15mm, transparent 2.4mm
+    );
+  }
+  .barcode-label {
+    margin-top: 0.3mm;
+    font-size: 1mm;
+    font-style: italic;
+    font-weight: 700;
+    color: #B33A5E;
   }
 
   /* Vertical badge strip, flush against the pink/white seam */
@@ -122,17 +157,17 @@
   }
   .trust-item { text-align: center; }
   .trust-icon {
-    width: 4.3mm;
-    height: 4.3mm;
+    width: 4mm;
+    height: 4mm;
     border-radius: 50%;
     background: none;
     border: 0.15mm solid #2480BA;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 0.6mm;
+    margin: 0 auto 0.35mm;
   }
-  .trust-icon svg { width: 2.5mm; height: 2.5mm; color: #2480BA; stroke-width: 1.5; display: block; }
+  .trust-icon svg { width: 2.3mm; height: 2.3mm; color: #2480BA; stroke-width: 1.5; display: block; }
   .trust-item span {
     font-size: 0.85mm;
     font-weight: 700;
@@ -195,6 +230,8 @@
 
     <div class="info-panel">
 
+      <div class="info-top">
+
       <div class="trust-row">
         <div class="trust-item">
           <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="9" cy="6" rx="1.7" ry="4.6" transform="rotate(-16 9 6)"/><ellipse cx="15" cy="6" rx="1.7" ry="4.6" transform="rotate(16 15 6)"/><circle cx="12" cy="13.3" r="4.2"/><ellipse cx="12" cy="19.6" rx="5.3" ry="3.2"/></svg></div>
@@ -251,6 +288,13 @@
             <p><span class="placeholder">[contact needed]</span> &middot; kleanhair.com</p>
           </div>
         </div>
+      </div>
+
+      </div>
+
+      <div class="barcode-placeholder">
+        <div class="barcode-bars"></div>
+        <div class="barcode-label">[UPC barcode &mdash; add after GS1 registration]</div>
       </div>
 
     </div>
