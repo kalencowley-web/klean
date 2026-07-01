@@ -1325,11 +1325,15 @@ figcaption small {
 
 .team-photo-wrap {
   background: var(--color-primary-tint);
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
 }
 .team-photo-wrap img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
+  object-fit: contain;
+  object-position: center top;
 }
 
 .team-info {
