@@ -234,8 +234,7 @@ if (cartItemEl) {
           headers: { Accept: 'application/json' },
           body: new FormData(preorderForm),
         });
-        const data = await response.json().catch(() => ({}));
-        if (!response.ok || data.success !== 'true') throw new Error('Request failed');
+        if (!response.ok) throw new Error('Request failed');
 
         preorderEmailDisplay.textContent = preorderEmailInput.value;
         preorderForm.hidden = true;
