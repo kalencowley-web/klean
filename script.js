@@ -212,7 +212,7 @@ if (cartItemEl) {
     preorderBtn.addEventListener('click', () => {
       preorderCta.hidden = true;
       preorderForm.hidden = false;
-      preorderEmailInput.focus();
+      document.getElementById('preorder-name').focus();
     });
   }
 
