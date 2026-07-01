@@ -1124,6 +1124,7 @@ figcaption small {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
   padding: var(--space-8);
+  overflow: hidden;
 }
 
 .cart-item {
@@ -1245,7 +1246,7 @@ figcaption small {
 }
 .form-row-3 { grid-template-columns: 1.4fr 0.8fr 1fr; }
 
-.form-field { display: flex; flex-direction: column; gap: 6px; }
+.form-field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 .form-field label {
   font-size: 0.82rem;
   font-weight: 600;
